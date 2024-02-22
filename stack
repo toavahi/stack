@@ -1,0 +1,49 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+#define max_size 256
+
+class Stack_{
+  int top_of_stack{};
+  vector<char> char_i;
+  public:
+  Stack_(){
+    vector<char> char_i;
+  };
+  
+    void push(char i){
+      char_i.push_back(i);
+      top_of_stack++;
+    }
+    void pop(){
+      char_i.pop_back();
+      top_of_stack--;
+    }
+    bool empty(){
+      if(top_of_stack==0){
+        return true;
+      }
+      else{
+        return false;
+      }
+    }
+    char top(){
+      return char_i[top_of_stack-1];
+    }
+    int size(){
+      return top_of_stack;
+    }
+};
+
+int main(){
+  Stack_ top;
+  string text{};
+  cin >> text;
+  for(int i{}; i < text.length(); ++i){
+    top.push(text[i]);
+  }
+  
+  return 0;
+}
